@@ -8,6 +8,26 @@ With [this](https://cursos.alura.com.br/course/react-automatizando-testes) cours
 - Lean the [two most popular](https://2020.stateofjs.com/en-US/technologies/testing/) tools for testing React projects.
 - Understand what needs and what doesn’t need to be tested;
 
+## Running the project
+
+First you should add the dependencies:
+
+```bash
+npm install
+```
+
+then run the backend project:
+
+```bash
+npm run backend
+```
+
+And finally, run the development server:
+
+```bash
+npm start
+```
+
 ---
 
 ## Starter code (Banking project)
