@@ -14,6 +14,60 @@
       "valor": "20",
       "data": "26/09/2020",
       "id": 2
+    },
+    {
+      "transacao": "saque",
+      "valor": "10",
+      "data": "13/04/2021",
+      "id": 3
+    },
+    {
+      "transacao": "saque",
+      "valor": "10",
+      "data": "13/04/2021",
+      "id": 4
+    },
+    {
+      "transacao": "saque",
+      "valor": "10",
+      "data": "13/04/2021",
+      "id": 5
+    },
+    {
+      "transacao": "saque",
+      "valor": "10",
+      "data": "13/04/2021",
+      "id": 6
+    },
+    {
+      "transacao": "saque",
+      "valor": "10",
+      "data": "13/04/2021",
+      "id": 7
+    },
+    {
+      "transacao": "saque",
+      "valor": "100",
+      "data": "13/04/2021",
+      "id": 8
+    },
+    {
+      "transacao": "saque",
+      "valor": "10",
+      "data": "13/04/2021",
+      "id": 9
+    },
+    {
+      "transacao": "saque",
+      "valor": "10",
+      "data": "13/04/2021",
+      "id": 10
+    },
+    {
+      "transacao": "saque",
+      "valor": "10",
+      "data": "13/04/2021",
+      "id": 11
     }
   ]
 }

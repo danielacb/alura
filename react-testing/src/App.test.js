@@ -1,5 +1,5 @@
 import React from "react";
-import { render, screen } from "@testing-library/react";
+import { fireEvent, render, screen } from "@testing-library/react";
 
 import App, { calcularNovoSaldo } from "./app";
 
@@ -48,6 +48,22 @@ describe("App component", () => {
         const newBalance = calcularNovoSaldo(transaction, 150);
 
         expect(newBalance).toBe(200);
+      });
+
+      it("should make the withdraw transaction", () => {
+        const { getByText, getByTestId, getByLabelText } = render(<App />);
+        const balance = getByText("R$ 1000");
+        const transaction = getByLabelText("Saque");
+        const amount = getByTestId("valor");
+        const transactionButton = getByText("Realizar operação");
+
+        expect(balance.textContent).toBe("R$ 1000");
+
+        fireEvent.click(transaction, { target: { amount: "Saque" } });
+        fireEvent.change(amount, { target: { value: 10 } });
+        fireEvent.click(transactionButton);
+
+        expect(balance.textContent).toBe("R$ 990");
       });
     });
   });
