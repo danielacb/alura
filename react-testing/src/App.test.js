@@ -38,11 +38,11 @@ describe("App component", () => {
       });
 
       it("should make the deposit transaction", () => {
-        const { getByText, getByTestId, getByLabelText } = render(<App />);
-        const balance = getByText("R$ 1000");
-        const transaction = getByLabelText("Depósito");
-        const amount = getByTestId("valor");
-        const transactionButton = getByText("Realizar operação");
+        render(<App />);
+        const balance = screen.getByText("R$ 1000");
+        const transaction = screen.getByLabelText("Depósito");
+        const amount = screen.getByTestId("valor");
+        const transactionButton = screen.getByText("Realizar operação");
 
         expect(balance.textContent).toBe("R$ 1000");
 
@@ -67,11 +67,11 @@ describe("App component", () => {
       });
 
       it("should make the withdraw transaction", () => {
-        const { getByText, getByTestId, getByLabelText } = render(<App />);
-        const balance = getByText("R$ 1000");
-        const transaction = getByLabelText("Saque");
-        const amount = getByTestId("valor");
-        const transactionButton = getByText("Realizar operação");
+        render(<App />);
+        const balance = screen.getByText("R$ 1000");
+        const transaction = screen.getByLabelText("Saque");
+        const amount = screen.getByTestId("valor");
+        const transactionButton = screen.getByText("Realizar operação");
 
         expect(balance.textContent).toBe("R$ 1000");
 
