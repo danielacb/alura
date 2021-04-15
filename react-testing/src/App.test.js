@@ -36,6 +36,22 @@ describe("App component", () => {
 
         expect(newBalance).toBe(100);
       });
+
+      it("should make the deposit transaction", () => {
+        const { getByText, getByTestId, getByLabelText } = render(<App />);
+        const balance = getByText("R$ 1000");
+        const transaction = getByLabelText("Depósito");
+        const amount = getByTestId("valor");
+        const transactionButton = getByText("Realizar operação");
+
+        expect(balance.textContent).toBe("R$ 1000");
+
+        fireEvent.click(transaction, { target: { amount: "Depósito" } });
+        fireEvent.change(amount, { target: { value: 20 } });
+        fireEvent.click(transactionButton);
+
+        expect(balance.textContent).toBe("R$ 1020");
+      });
     });
 
     describe("When I withdraw money", () => {
