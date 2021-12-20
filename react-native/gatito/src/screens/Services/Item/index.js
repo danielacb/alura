@@ -1,0 +1,37 @@
+import React, { useState } from "react";
+import { Button, Text, View } from "react-native";
+import Input from "../../../components/Input";
+
+import styles from "./styles";
+
+export default function Item({ name, price, description }) {
+  const [quantity, setQuantity] = useState(1);
+
+  return (
+    <>
+      <View style={styles.information}>
+        <Text style={styles.name}>{name}</Text>
+        <Text style={styles.description}>{description}</Text>
+        <Text style={styles.price}>{price}</Text>
+      </View>
+      <View style={styles.cart}>
+        <View>
+          <View style={styles.value}>
+            <Text style={styles.description}>Quantity: </Text>
+            <Input
+              value={quantity}
+              onChangeText={(value) => setQuantity(value)}
+              style={styles.quantity}
+            />
+          </View>
+          <View style={styles.value}>
+            <Text style={styles.description}>Price: </Text>
+            <Text style={styles.price}>0</Text>
+          </View>
+        </View>
+        <Button title="adicionar" />
+      </View>
+      <View style={styles.divisor} />
+    </>
+  );
+}
