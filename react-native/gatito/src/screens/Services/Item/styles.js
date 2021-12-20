@@ -41,11 +41,8 @@ export default StyleSheet.create({
     flexWrap: "wrap",
   },
   description: {
-    color: colors.escuro,
+    color: colors.dark,
     fontSize: 16,
     marginRight: 8,
-  },
-  quantity: {
-    width: 42,
   },
 });

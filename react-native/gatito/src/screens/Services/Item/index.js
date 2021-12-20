@@ -7,6 +7,14 @@ import styles from "./styles";
 export default function Item({ name, price, description }) {
   const [quantity, setQuantity] = useState(1);
 
+  const handleChange = (value) => {
+    if (!value.match(/^[0-9]*$/)) return;
+
+    const removeZeros = value.replace(/^(0)(.+)/, "$2");
+
+    setQuantity(removeZeros);
+  };
+
   return (
     <>
       <View style={styles.information}>
@@ -20,8 +28,7 @@ export default function Item({ name, price, description }) {
             <Text style={styles.description}>Quantity: </Text>
             <Input
               value={quantity}
-              onChangeText={(value) => setQuantity(value)}
-              style={styles.quantity}
+              onChangeText={(value) => handleChange(value)}
             />
           </View>
           <View style={styles.value}>
