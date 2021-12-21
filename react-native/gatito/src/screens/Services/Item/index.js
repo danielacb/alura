@@ -1,6 +1,7 @@
 import React, { useState } from "react";
-import { Button, Text, View } from "react-native";
+import { Text, View } from "react-native";
 import Input from "../../../components/Input";
+import Button from "../../../components/Button";
 
 import styles from "./styles";
 
@@ -27,7 +28,7 @@ export default function Item({ name, price, description }) {
           <View style={styles.value}>
             <Text style={styles.description}>Quantity: </Text>
             <Input
-              value={quantity}
+              value={String(quantity)}
               onChangeText={(value) => handleChange(value)}
             />
           </View>
@@ -36,7 +37,7 @@ export default function Item({ name, price, description }) {
             <Text style={styles.price}>0</Text>
           </View>
         </View>
-        <Button title="adicionar" />
+        <Button title="add" />
       </View>
       <View style={styles.divisor} />
     </>
