@@ -44,5 +44,6 @@ export default StyleSheet.create({
     color: colors.dark,
     fontSize: 16,
     marginRight: 8,
+    maxWidth: "80%",
   },
 });
