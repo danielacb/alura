@@ -1,6 +1,8 @@
 import React from "react";
-import { FlatList, View } from "react-native";
+import { FlatList, KeyboardAvoidingView, Platform, View } from "react-native";
 import Item from "./Item";
+
+import styles from "../../styles/styles";
 
 const services = [
   {
@@ -26,12 +28,17 @@ const services = [
 export default function Services() {
   return (
     <View>
-      <FlatList
-        data={services}
-        renderItem={({ item }) => <Item {...item} />}
-        keyExtractor={(item) => item.id}
-        removeClippedSubviews={false}
-      />
+      <KeyboardAvoidingView
+        behavior={Platform.OS === "ios" ? "padding" : "height"}
+        style={styles.container}
+      >
+        <FlatList
+          data={services}
+          renderItem={({ item }) => <Item {...item} />}
+          keyExtractor={(item) => item.id}
+          removeClippedSubviews={false}
+        />
+      </KeyboardAvoidingView>
     </View>
   );
 }

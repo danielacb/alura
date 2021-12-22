@@ -3,10 +3,11 @@ import "intl";
 import "intl/locale-data/jsonp/en.js";
 
 import Services from "./src/screens/Services";
+import styles from "./src/styles/styles";
 
 export default function App() {
   return (
-    <SafeAreaView>
+    <SafeAreaView style={styles.container}>
       <Services />
       <StatusBar style="auto" />
     </SafeAreaView>
