@@ -2,6 +2,7 @@ import React from "react";
 import { View, FlatList, KeyboardAvoidingView, Platform } from "react-native";
 import styles from "../../styles/styles";
 import Item from "./CartItem";
+import CartStatus from "../../components/CartStatus";
 
 const services = [
   {
@@ -28,12 +29,18 @@ const services = [
 ];
 
 export default function Cart() {
+  const total = services.reduce(
+    (sum, { price, quantity }) => sum + price * quantity,
+    0
+  );
+
   return (
     <View>
       <KeyboardAvoidingView
         behavior={Platform.OS === "ios" ? "padding" : "height"}
         style={styles.container}
       >
+        <CartStatus total={total} />
         <FlatList
           data={services}
           renderItem={({ item }) => (
