@@ -2,13 +2,13 @@ import { SafeAreaView, StatusBar } from "react-native";
 import "intl";
 import "intl/locale-data/jsonp/en.js";
 
-import Services from "./src/screens/Services";
+import Cart from "./src/screens/Cart";
 import styles from "./src/styles/styles";
 
 export default function App() {
   return (
     <SafeAreaView style={styles.container}>
-      <Services />
+      <Cart />
       <StatusBar style="auto" />
     </SafeAreaView>
   );
